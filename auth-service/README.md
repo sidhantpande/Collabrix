@@ -69,8 +69,8 @@ Content-Type: application/json
 
 ```json
 {
-  "username": "luiz.andrade",
-  "email": "luiz@mobflow.dev",
+  "username": "sidhant.pande",
+  "email": "sidhant@sidhantpande.in",
   "password": "StrongPass#2026"
 }
 ```
@@ -80,8 +80,8 @@ Example response:
 ```json
 {
   "id": "0c34ed9e-bef9-4c17-9af6-b2c7a117a9b0",
-  "username": "luiz.andrade",
-  "email": "luiz@mobflow.dev",
+  "username": "sidhant.pande",
+  "email": "sidhant@sidhantpande.in",
   "role": "USER",
   "enabled": false,
   "failedLoginAttempts": 0,
@@ -113,7 +113,7 @@ Content-Type: application/json
 
 ```json
 {
-  "username": "luiz.andrade",
+  "username": "sidhant.pande",
   "password": "StrongPass#2026"
 }
 ```
@@ -138,8 +138,8 @@ Example response:
 
 ```json
 {
-  "username": "luiz.andrade",
-  "email": "luiz@mobflow.dev"
+  "username": "sidhant.pande",
+  "email": "sidhant@sidhantpande.in"
 }
 ```
 
@@ -151,7 +151,7 @@ Unlike the other business services, `auth-service` does not expose `/internal/**
 
 ## Database
 
-- Database: PostgreSQL `mobflow_auth`
+- Database: PostgreSQL `collabrix_auth`
 - Migration strategy: Flyway
 - Main table: `user_credential`
 

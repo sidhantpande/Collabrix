@@ -174,7 +174,7 @@ describe('SocialComponent', () => {
     });
     TestBed.inject(UserStateService).set({
       username: 'current',
-      email: 'current@mobflow.test',
+      email: 'current@collabrix.test',
     });
   });
 

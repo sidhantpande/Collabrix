@@ -85,7 +85,7 @@ Content-Type: application/json
 
 ```json
 {
-  "name": "Mobflow Platform",
+  "name": "Collabrix Platform",
   "description": "Core product delivery workspace for platform engineering."
 }
 ```
@@ -95,7 +95,7 @@ Example response:
 ```json
 {
   "id": "5e74e8d2-cf5c-4f80-99e1-9468aa347fd3",
-  "name": "Mobflow Platform",
+  "name": "Collabrix Platform",
   "description": "Core product delivery workspace for platform engineering.",
   "joinCode": "MBFLW123",
   "createdByAuthId": "0c34ed9e-bef9-4c17-9af6-b2c7a117a9b0"
@@ -171,7 +171,7 @@ The internal role-check endpoint under `/internal/**` is exposed without standar
 
 ## Database
 
-- Database: PostgreSQL `mobflow_workspaces`
+- Database: PostgreSQL `collabrix_workspaces`
 - Migration strategy: service-owned relational schema
 
 ### Main Entities

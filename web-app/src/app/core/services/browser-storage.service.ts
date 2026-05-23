@@ -4,7 +4,7 @@ import { Theme } from './theme.service';
 @Injectable({ providedIn: 'root' })
 export class BrowserStorageService {
   private readonly tokenKey = 'token';
-  private readonly themeKey = 'mobflow-theme';
+  private readonly themeKey = 'collabrix-theme';
 
   getToken(): string | null {
     return localStorage.getItem(this.tokenKey);

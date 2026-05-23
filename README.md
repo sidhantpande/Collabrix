@@ -1,25 +1,24 @@
 <p align="center">
-  <a href="https://www.linkedin.com/in/luizsouzandrade/">
-    <img src="https://img.shields.io/badge/LinkedIn-Luiz%20Souza%20Andrade-0A66C2?logo=linkedin&logoColor=white" alt="LinkedIn">
+  <a href="https://sidhantpande.in">
+    <img src="https://img.shields.io/badge/Website-Sidhant%20Pande-0A66C2" alt="Website">
   </a>
-  <a href="https://github.com/LuizAndradeDev/mobflow">
-    <img src="https://img.shields.io/github/commit-activity/t/LuizAndradeDev/mobflow?label=Total%20Commits" alt="Total commits">
+  <a href="https://github.com/sidhantpande/Collabrix">
+    <img src="https://img.shields.io/github/commit-activity/t/sidhantpande/collabrix?label=Total%20Commits" alt="Total commits">
   </a>
   <a href="LICENSE">
     <img src="https://img.shields.io/badge/License-Attribution--NonCommercial-2ea44f" alt="License">
   </a>
 </p>
 
-<p align="center">
-  <img src="content/mobflow_logo.png" alt="Mobflow logo" width="100" height="100">
-</p>
 
-<h1 align="center">Mobflow</h1>
+
+<h1 align="center">Collabrix</h1>
 
 <p align="center"><strong>A collaborative platform for teams</strong></p>
+<p align="center"><strong>Built by Sidhant Pande | Website: <a href="https://sidhantpande.in">sidhantpande.in</a></strong></p>
 
 <p align="center">
-  Mobflow is a portfolio-grade SaaS simulation that explores modern collaboration workflows with microservices, event-driven communication, and production-style local orchestration.
+  Collabrix is a portfolio-grade SaaS simulation that explores modern collaboration workflows with microservices, event-driven communication, and production-style local orchestration.
 </p>
 
 <details>
@@ -48,9 +47,9 @@
 
 ## Overview
 
-Mobflow is a collaborative platform for teams that combines authentication, workspaces, task execution, social interactions, notifications, and realtime chat in a single product experience. It is built as a monorepo with eight Spring Boot backend services, an Angular frontend, and a Docker-based local platform that mirrors the operational boundaries of a real SaaS system.
+Collabrix is a collaborative platform for teams that combines authentication, workspaces, task execution, social interactions, notifications, and realtime chat in a single product experience. It is built as a monorepo with eight Spring Boot backend services, an Angular frontend, and a Docker-based local platform that mirrors the operational boundaries of a real SaaS system.
 
-The project exists to understand and simulate how a production-oriented SaaS can be structured across multiple bounded contexts. Instead of presenting a simplified CRUD sample, Mobflow focuses on service boundaries, gateway routing, JWT-based security, asynchronous events with Kafka, polyglot persistence, local observability, and a developer workflow that reflects real platform engineering decisions.
+The project exists to understand and simulate how a production-oriented SaaS can be structured across multiple bounded contexts. Instead of presenting a simplified CRUD sample, Collabrix focuses on service boundaries, gateway routing, JWT-based security, asynchronous events with Kafka, polyglot persistence, local observability, and a developer workflow that reflects real platform engineering decisions.
 
 ### Built With
 
@@ -68,25 +67,6 @@ The project exists to understand and simulate how a production-oriented SaaS can
 ![Prometheus](https://img.shields.io/badge/Prometheus-Observability-E6522C?logo=prometheus&logoColor=white)
 ![Grafana](https://img.shields.io/badge/Grafana-Dashboards-F46800?logo=grafana&logoColor=white)
 
-### Demonstration
-
-#### 1. General Demonstration
-
-Mobflow supports the full core flow from account registration and email confirmation to login, workspace access, task management, comments, and notifications.
-
-[![Mobflow Demo](https://img.youtube.com/vi/8tesylC7Epo/maxresdefault.jpg)](https://youtu.be/8tesylC7Epo?si=5IB_TcI1BV1dVHhS)
-
-#### 2. Friendship Demonstration
-
-The platform includes realtime private messaging with WebSocket delivery, conversation history, and read receipt support through the API Gateway and chat service.
-
-[![Mobflow Demo](https://img.youtube.com/vi/IZXBm-hCL4w/maxresdefault.jpg)](https://youtu.be/IZXBm-hCL4w)
-
-#### 3. Comments and Mentions Demonstration
-
-Task comments support collaborative discussion and `@mentions`, allowing users to trigger targeted notification events during task-related conversations.
-
-[![Mobflow Demo](https://img.youtube.com/vi/ltjC_LCeW3Y/maxresdefault.jpg)](https://youtu.be/ltjC_LCeW3Y)
 
 ## Getting Started
 
@@ -106,7 +86,7 @@ Optional for local development outside containers:
 
 ### Environment Configuration
 
-Mobflow uses the root `.env` file as the shared runtime configuration for Docker Compose and the backend services.
+Collabrix uses the root `.env` file as the shared runtime configuration for Docker Compose and the backend services.
 
 1. Copy the reference file:
 
@@ -143,8 +123,8 @@ docker version
 2. Clone the repository and enter the project directory:
 
 ```bash
-git clone https://github.com/LuizAndradeDev/mobflow.git
-cd mobflow
+git clone https://github.com/sidhantpande/Collabrix.git
+cd collabrix
 ```
 
 3. Create and populate `.env` as described above.
@@ -163,10 +143,10 @@ docker compose exec postgres sh -lc 'PGPASSWORD="$POSTGRES_PASSWORD" psql -U "$P
 
 Expected databases:
 
-- `mobflow_auth`
-- `mobflow_user`
-- `mobflow_workspace`
-- `mobflow_task`
+- `collabrix_auth`
+- `collabrix_user`
+- `collabrix_workspace`
+- `collabrix_task`
 
 6. Start the rest of the platform:
 
@@ -198,7 +178,7 @@ npm install
 npm start
 ```
 
-The Angular development proxy targets `http://localhost:8080`, so this mode assumes the gateway is running locally on that port. If you are using the Dockerized stack through `nginx` on `http://localhost`, update [web-app/proxy.conf.json](/home/luiz/Documentos/Mobflow/web-app/proxy.conf.json) or run the frontend against the production edge instead.
+The Angular development proxy targets `http://localhost:8080`, so this mode assumes the gateway is running locally on that port. If you are using the Dockerized stack through `nginx` on `http://localhost`, update [web-app/proxy.conf.json](web-app/proxy.conf.json) or run the frontend against the production edge instead.
 
 ### Local Tools
 
@@ -227,7 +207,7 @@ The following local tools are exposed by Docker Compose:
 
 ### High-Level System Flow
 
-Mobflow follows a consistent request path for user-facing operations:
+Collabrix follows a consistent request path for user-facing operations:
 
 `Client -> Nginx -> API Gateway -> Services -> Data Stores / Kafka`
 
@@ -267,10 +247,10 @@ Kafka is used for domain events that should not block the request path, especial
 | `web-app` | Browser SPA | User interface for authentication, workspace, task, social, notification, and chat flows | Static frontend bundle | Presents the product experience and calls the gateway over HTTP/WebSocket |
 | `nginx` | `http://localhost` | Serves the Angular build and fronts all browser traffic | Stateless | Edge layer and single browser-facing origin |
 | `api-gateway` | `http://localhost:8087` and proxied `/api/**` | Public routing, JWT enforcement, rate limiting, and header propagation | Stateless | Central backend entry point |
-| `auth-service` | `/api/auth/**` | Account registration, login, email confirmation, JWT issuance, trusted identity lookup | PostgreSQL (`mobflow_auth`) | Identity and token authority |
-| `user-service` | `/api/users/**` | User profiles, avatar uploads, and profile enrichment for other services | PostgreSQL (`mobflow_user`), Redis, MinIO | Profile and avatar boundary |
-| `workspace-service` | `/api/workspaces/**` | Workspace lifecycle, invites, member roles, and join-code access | PostgreSQL (`mobflow_workspace`) | Collaboration boundary and membership authority |
-| `task-service` | `/api/tasks/**` via gateway rewrite to `/tasks/api/**` | Boards, lists, tasks, workspace summaries, and analytics | PostgreSQL (`mobflow_task`), Redis | Task execution and reporting domain |
+| `auth-service` | `/api/auth/**` | Account registration, login, email confirmation, JWT issuance, trusted identity lookup | PostgreSQL (`collabrix_auth`) | Identity and token authority |
+| `user-service` | `/api/users/**` | User profiles, avatar uploads, and profile enrichment for other services | PostgreSQL (`collabrix_user`), Redis, MinIO | Profile and avatar boundary |
+| `workspace-service` | `/api/workspaces/**` | Workspace lifecycle, invites, member roles, and join-code access | PostgreSQL (`collabrix_workspace`) | Collaboration boundary and membership authority |
+| `task-service` | `/api/tasks/**` via gateway rewrite to `/tasks/api/**` | Boards, lists, tasks, workspace summaries, and analytics | PostgreSQL (`collabrix_task`), Redis | Task execution and reporting domain |
 | `social-service` | `/api/social/**` via gateway rewrite to `/social/api/**` | Friendships, friend requests, task comments, and mention resolution | MongoDB (`social`) | Social collaboration domain |
 | `chat-service` | `/api/chat/**` and `/chat/ws/chat` via gateway | Private conversations, message history, realtime delivery, unread counters, and read receipts | MongoDB (`chat`) | Realtime messaging domain |
 | `notification-service` | `/api/notifications/**` | In-app notification persistence and email delivery triggered by platform events | MongoDB (`notifications`) | Event-consumption and user notification delivery edge |
@@ -292,7 +272,7 @@ Collaboration services:
 
 ### Communication Patterns
 
-Mobflow uses two communication styles:
+Collabrix uses two communication styles:
 
 - **Synchronous HTTP**: browser requests enter through `nginx` and `api-gateway`, then reach the target service over REST. Services also call trusted internal endpoints when they need request-scoped authorization or enrichment data. Examples include `task-service` asking `workspace-service` for member roles, `workspace-service` asking `user-service` to resolve usernames, `social-service` validating task context and membership, and `chat-service` validating friendship status before opening private conversations.
 - **Asynchronous Kafka**: `auth-service`, `workspace-service`, `task-service`, `social-service`, and `chat-service` publish domain events. Current topics include `auth-events`, `workspace-events`, `task-events`, `social-comment-events`, `social-friendship-events`, and `social.events`. `notification-service` consumes those events to generate notifications and email side effects without coupling notification delivery to the latency or availability of the original request path.
@@ -303,7 +283,7 @@ Kafka is intentionally used for cross-service side effects, not as the primary r
 
 Authentication is stateless and JWT-based. `auth-service` issues tokens, `api-gateway` validates them at the edge, and downstream services validate them again with the shared JWT secret. This avoids centralizing all authorization decisions in the gateway and lets each service keep responsibility for its own domain rules.
 
-Trusted backend-to-backend calls use `X-Internal-Secret` on dedicated internal endpoints such as `/internal/**` and `auth-service`'s `/internal/auth/**`. In practice, Mobflow uses this for membership checks, user/profile enrichment, username resolution, task context lookups, workspace summaries, and friendship validation. These internal endpoints are intentionally narrow and are used only when one service must consult another service's source of truth.
+Trusted backend-to-backend calls use `X-Internal-Secret` on dedicated internal endpoints such as `/internal/**` and `auth-service`'s `/internal/auth/**`. In practice, Collabrix uses this for membership checks, user/profile enrichment, username resolution, task context lookups, workspace summaries, and friendship validation. These internal endpoints are intentionally narrow and are used only when one service must consult another service's source of truth.
 
 This results in a simple defense-in-depth model:
 
@@ -347,4 +327,4 @@ scripts/ci/check-backend-quality.sh
 
 ## License
 
-This project is licensed under the [Mobflow Attribution-NonCommercial License 1.0](LICENSE).
+This project is licensed under the [Collabrix Attribution-NonCommercial License 1.0](LICENSE).

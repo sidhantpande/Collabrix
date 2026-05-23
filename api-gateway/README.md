@@ -1,6 +1,6 @@
 # API Gateway
 
-The Mobflow API Gateway is a centralized entry point for all external requests to the microservices platform. Built with Spring Cloud Gateway, it provides request routing, authentication, rate limiting, observability, and cross-cutting concerns without containing any business logic.
+The Collabrix API Gateway is a centralized entry point for all external requests to the microservices platform. Built with Spring Cloud Gateway, it provides request routing, authentication, rate limiting, observability, and cross-cutting concerns without containing any business logic.
 
 ## Responsibilities
 
@@ -116,8 +116,8 @@ cd api-gateway
 ### Docker
 
 ```bash
-docker build -t mobflow/api-gateway ./api-gateway
-docker run -p 8087:8080 mobflow/api-gateway
+docker build -t collabrix/api-gateway ./api-gateway
+docker run -p 8087:8080 collabrix/api-gateway
 ```
 
 ### Full Platform
@@ -126,7 +126,7 @@ docker run -p 8087:8080 mobflow/api-gateway
 docker compose up -d
 ```
 
-In Docker Compose, backend application containers stay on the internal `mobflow-network`. External browser traffic should go through Nginx on `http://localhost`, while direct gateway diagnostics remain available on `http://localhost:8087`.
+In Docker Compose, backend application containers stay on the internal `collabrix-network`. External browser traffic should go through Nginx on `http://localhost`, while direct gateway diagnostics remain available on `http://localhost:8087`.
 
 ## Testing
 

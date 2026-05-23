@@ -9,7 +9,7 @@ services:
     volumes:
       - mongodb_data:/data/db
     networks:
-      - mobflow-network
+      - collabrix-network
     healthcheck:
       test: echo 'db.runCommand("ping").ok' | mongosh localhost:27017/test --quiet
       interval: 10s
@@ -23,7 +23,7 @@ services:
       ZOOKEEPER_CLIENT_PORT: 2181
       ZOOKEEPER_TICK_TIME: 2000
     networks:
-      - mobflow-network
+      - collabrix-network
     healthcheck:
       test: echo stat | nc localhost 2181
       interval: 10s
@@ -47,7 +47,7 @@ services:
       KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
       KAFKA_AUTO_CREATE_TOPICS_ENABLE: "true"
     networks:
-      - mobflow-network
+      - collabrix-network
     healthcheck:
       test: kafka-topics --bootstrap-server localhost:9092 --list
       interval: 15s
@@ -61,7 +61,7 @@ services:
       - "1025:1025"
       - "8025:8025"
     networks:
-      - mobflow-network
+      - collabrix-network
 
   postgres:
     image: postgres:16
@@ -75,7 +75,7 @@ services:
       - postgres_data:/var/lib/postgresql/data
       - ./init-db.sql:/docker-entrypoint-initdb.d/init-db.sql
     networks:
-      - mobflow-network
+      - collabrix-network
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U ${DB_USER} -d postgres"]
       interval: 5s
@@ -89,7 +89,7 @@ services:
     volumes:
       - redis_data:/data
     networks:
-      - mobflow-network
+      - collabrix-network
     healthcheck:
       test: ["CMD", "redis-cli", "ping"]
       interval: 5s
@@ -108,7 +108,7 @@ services:
     volumes:
       - minio_data:/data
     networks:
-      - mobflow-network
+      - collabrix-network
     healthcheck:
       test: ["CMD", "mc", "ready", "local"]
       interval: 5s
@@ -126,7 +126,7 @@ services:
       - workspace-service
       - task-service
     networks:
-      - mobflow-network
+      - collabrix-network
     env_file:
       - .env
 
@@ -136,7 +136,7 @@ services:
       postgres:
         condition: service_healthy
     networks:
-      - mobflow-network
+      - collabrix-network
     env_file:
       - .env
 
@@ -150,7 +150,7 @@ services:
       redis:
         condition: service_healthy
     networks:
-      - mobflow-network
+      - collabrix-network
     env_file:
       - .env
 
@@ -162,7 +162,7 @@ services:
       user-service:
         condition: service_started
     networks:
-      - mobflow-network
+      - collabrix-network
     env_file:
       - .env
 
@@ -178,7 +178,7 @@ services:
       user-service:
         condition: service_started
     networks:
-      - mobflow-network
+      - collabrix-network
     env_file:
       - .env
 
@@ -192,7 +192,7 @@ services:
       mailhog:
         condition: service_started
     networks:
-      - mobflow-network
+      - collabrix-network
     env_file:
       - .env
 
@@ -210,7 +210,7 @@ services:
       task-service:
         condition: service_started
     networks:
-      - mobflow-network
+      - collabrix-network
     env_file:
       - .env
 
@@ -224,7 +224,7 @@ services:
       social-service:
         condition: service_started
     networks:
-      - mobflow-network
+      - collabrix-network
     env_file:
       - .env
 
@@ -249,7 +249,7 @@ services:
       - social-service
       - chat-service
     networks:
-      - mobflow-network
+      - collabrix-network
 
   grafana:
     image: grafana/grafana:latest
@@ -266,7 +266,7 @@ services:
     depends_on:
       - prometheus
     networks:
-      - mobflow-network
+      - collabrix-network
 
 
   nginx:
@@ -278,7 +278,7 @@ services:
     depends_on:
       - api-gateway
     networks:
-      - mobflow-network
+      - collabrix-network
     healthcheck:
       test: ["CMD-SHELL", "wget -qO- http://localhost:8080/health >/dev/null || exit 1"]
       interval: 10s
@@ -295,5 +295,5 @@ volumes:
   grafana_data:
 
 networks:
-  mobflow-network:
+  collabrix-network:
     driver: bridge

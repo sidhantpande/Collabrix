@@ -14,14 +14,14 @@ RUN mkdir -p target/dependency && cd target/dependency && jar -xf ../*.jar
 
 FROM eclipse-temurin:21-jre-alpine
 
-RUN addgroup -S mobflow && adduser -S mobflow -G mobflow
+RUN addgroup -S collabrix && adduser -S collabrix -G collabrix
 
 WORKDIR /app
 
 COPY --from=build /build/target/dependency /app
 COPY --from=build /build/target/*.jar /app/app.jar
 
-USER mobflow:mobflow
+USER collabrix:collabrix
 
 EXPOSE 8080
 

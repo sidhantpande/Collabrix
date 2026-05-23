@@ -191,7 +191,7 @@ The service also exposes `/tasks/internal/**` endpoints protected by the same in
 
 ## Database
 
-- Database: PostgreSQL `mobflow_tasks`
+- Database: PostgreSQL `collabrix_tasks`
 - Migration strategy: Flyway
 
 ### Main Entities

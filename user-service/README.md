@@ -70,7 +70,7 @@ Content-Type: application/json
 
 ```json
 {
-  "displayName": "Luiz Andrade",
+  "displayName": "Sidhant Pande",
   "bio": "Backend engineer focused on distributed systems and developer experience.",
   "phone": "+55-11-99999-0000"
 }
@@ -81,9 +81,9 @@ Example response:
 ```json
 {
   "authId": "0c34ed9e-bef9-4c17-9af6-b2c7a117a9b0",
-  "displayName": "Luiz Andrade",
+  "displayName": "Sidhant Pande",
   "bio": "Backend engineer focused on distributed systems and developer experience.",
-  "avatarUrl": "http://localhost:9000/mobflow-avatars/0c34ed9e-bef9-4c17-9af6-b2c7a117a9b0/avatar.png",
+  "avatarUrl": "http://localhost:9000/collabrix-avatars/0c34ed9e-bef9-4c17-9af6-b2c7a117a9b0/avatar.png",
   "phone": "+55-11-99999-0000"
 }
 ```
@@ -107,9 +107,9 @@ Example response:
 ```json
 {
   "authId": "0c34ed9e-bef9-4c17-9af6-b2c7a117a9b0",
-  "displayName": "Luiz Andrade",
+  "displayName": "Sidhant Pande",
   "bio": "Backend engineer focused on distributed systems and developer experience.",
-  "avatarUrl": "http://localhost:9000/mobflow-avatars/0c34ed9e-bef9-4c17-9af6-b2c7a117a9b0/avatar-2026-04-16T10:15:30Z.png",
+  "avatarUrl": "http://localhost:9000/collabrix-avatars/0c34ed9e-bef9-4c17-9af6-b2c7a117a9b0/avatar-2026-04-16T10:15:30Z.png",
   "phone": "+55-11-99999-0000"
 }
 ```
@@ -135,13 +135,13 @@ Example response:
 [
   {
     "authId": "0c34ed9e-bef9-4c17-9af6-b2c7a117a9b0",
-    "displayName": "Luiz Andrade",
-    "avatarUrl": "http://localhost:9000/mobflow-avatars/0c34ed9e-bef9-4c17-9af6-b2c7a117a9b0/avatar.png"
+    "displayName": "Sidhant Pande",
+    "avatarUrl": "http://localhost:9000/collabrix-avatars/0c34ed9e-bef9-4c17-9af6-b2c7a117a9b0/avatar.png"
   },
   {
     "authId": "7f45fb3d-0f7a-4c65-9ad2-df4e8da40cb7",
     "displayName": "Maria Costa",
-    "avatarUrl": "http://localhost:9000/mobflow-avatars/7f45fb3d-0f7a-4c65-9ad2-df4e8da40cb7/avatar.png"
+    "avatarUrl": "http://localhost:9000/collabrix-avatars/7f45fb3d-0f7a-4c65-9ad2-df4e8da40cb7/avatar.png"
   }
 ]
 ```
@@ -154,7 +154,7 @@ Public application endpoints require a valid Bearer token. The JWT filter valida
 
 ## Database and Storage
 
-- Relational database: PostgreSQL `mobflow_users`
+- Relational database: PostgreSQL `collabrix_users`
 - Cache: Redis
 - Object storage: MinIO
 - Migration strategy: application-managed relational schema with service-owned profile table

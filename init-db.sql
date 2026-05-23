@@ -1,20 +1,20 @@
--- Databases required by the relational Mobflow services.
-SELECT 'CREATE DATABASE mobflow_auth'
+-- Databases required by the relational Collabrix services.
+SELECT 'CREATE DATABASE collabrix_auth'
 WHERE NOT EXISTS (
-    SELECT FROM pg_database WHERE datname = 'mobflow_auth'
+    SELECT FROM pg_database WHERE datname = 'collabrix_auth'
 )\gexec
 
-SELECT 'CREATE DATABASE mobflow_user'
+SELECT 'CREATE DATABASE collabrix_user'
 WHERE NOT EXISTS (
-    SELECT FROM pg_database WHERE datname = 'mobflow_user'
+    SELECT FROM pg_database WHERE datname = 'collabrix_user'
 )\gexec
 
-SELECT 'CREATE DATABASE mobflow_workspace'
+SELECT 'CREATE DATABASE collabrix_workspace'
 WHERE NOT EXISTS (
-    SELECT FROM pg_database WHERE datname = 'mobflow_workspace'
+    SELECT FROM pg_database WHERE datname = 'collabrix_workspace'
 )\gexec
 
-SELECT 'CREATE DATABASE mobflow_task'
+SELECT 'CREATE DATABASE collabrix_task'
 WHERE NOT EXISTS (
-    SELECT FROM pg_database WHERE datname = 'mobflow_task'
+    SELECT FROM pg_database WHERE datname = 'collabrix_task'
 )\gexec

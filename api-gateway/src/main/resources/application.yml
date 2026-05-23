@@ -89,7 +89,7 @@ rate-limit:
 info:
   app:
     name: ${spring.application.name}
-    description: API Gateway for Mobflow microservices platform
+    description: API Gateway for Collabrix microservices platform
 
 logging:
   level:

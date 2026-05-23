@@ -15,12 +15,12 @@ WORKDIR /app
 
 COPY --from=builder /app/target/*.jar app.jar
 
-RUN groupadd --system mobflow \
-    && useradd --system --gid mobflow --home-dir /app mobflow \
-    && chown -R mobflow:mobflow /app
+RUN groupadd --system collabrix \
+    && useradd --system --gid collabrix --home-dir /app collabrix \
+    && chown -R collabrix:collabrix /app
 
 EXPOSE 8083
 
-USER mobflow
+USER collabrix
 
 ENTRYPOINT ["java", "-jar", "app.jar"]
